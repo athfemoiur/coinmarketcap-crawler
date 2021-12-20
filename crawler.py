@@ -1,15 +1,17 @@
+import json
 from queue import Queue
 from threading import Thread
 from bs4 import BeautifulSoup
 import requests
 
 from config import BASE_LINK
-from crypto_symbols import crypto_symbols
 
 
 class CurrencyCrawler:
     def __init__(self, currency_list):
         self.currency_list = currency_list
+        with open('crypto_symbols.json') as f:
+            self.crypto_symbols = json.load(f)
         self.queue = self.create_queue()
 
     def create_queue(self):
@@ -18,7 +20,7 @@ class CurrencyCrawler:
         """
         queue = Queue()
         for curr in self.currency_list:
-            currency_name = crypto_symbols[curr]
+            currency_name = self.crypto_symbols[curr]
             queue.put({'code': curr, 'link': BASE_LINK.format(currency_name)})
         return queue
 
@@ -58,6 +60,3 @@ class CurrencyCrawler:
         except requests.HTTPError:
             return None
         return response
-
-
-
