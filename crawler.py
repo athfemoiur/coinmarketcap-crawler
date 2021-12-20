@@ -19,7 +19,7 @@ class CurrencyCrawler:
         queue = Queue()
         for curr in self.currency_list:
             currency_name = crypto_symbols[curr]
-            queue.put({'name': currency_name, 'link': BASE_LINK.format(currency_name)})
+            queue.put({'code': curr, 'link': BASE_LINK.format(currency_name)})
         return queue
 
     def start(self):
@@ -32,7 +32,7 @@ class CurrencyCrawler:
     def crawl(self):
         while True:
             curr = self.queue.get()
-            curr_data = {'Currency Name': curr['name'], **self.parse_currency_data(self.get(curr['link']).text)}
+            curr_data = {'Currency Code': curr['code'], **self.parse_currency_data(self.get(curr['link']).text)}
             print(curr_data)
             self.queue.task_done()
             if self.queue.empty():
@@ -47,7 +47,7 @@ class CurrencyCrawler:
         return {
             'Market Cap': stat_values[0].text,
             'Fully Diluted Market Cap': stat_values[1].text,
-            'Circulating Supply': stat_values[3].text,
+            'Circulating Supply': stat_values[4].text,
             'total supply': total_supply.text,
         }
 

@@ -676,7 +676,7 @@ crypto_symbols = {'42': '42-coin', '300': '300-token', '365': '365coin', '404': 
                   'ONG': 'somee.social', 'SOAR': 'soarcoin', 'SLT': 'social-lending-network',
                   'SMAC': 'social-media-coin', 'SMT': 'social-media-market', 'SEND': 'social-send',
                   'SOCC': 'socialcoin', 'SG': 'socialgood', 'SREUR': 'socialremit', 'XBOT': 'socialxbotcoin',
-                  'SCL': 'sociall', 'SOIL': 'soilcoin', 'SOJ': 'sojourn-coin', 'SOL': 'sola', 'SDAO': 'solar-dao',
+                  'SCL': 'sociall', 'SOIL': 'soilcoin', 'SOJ': 'sojourn-coin', 'SOL': 'solana', 'SDAO': 'solar-dao',
                   'SLR': 'solarcoin', 'CELL': 'solarfarm', 'SRX': 'solarex', 'SFC': 'solarflarecoin', 'XLR': 'solaris',
                   'SOLE': 'solecoin', 'SOLID': 'solidified', 'SCT*': 'soma', 'SONG': 'song-coin',
                   'SSD': 'sonic-screw-driver-coin', 'SOON': 'sooncoin', 'SPHTX': 'sophiatx', 'SNK': 'sosnovkino',
